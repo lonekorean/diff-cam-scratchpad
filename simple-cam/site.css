@@ -1,0 +1,9 @@
+body {
+	margin: 20px;
+	text-align: center;
+}
+
+video {
+	width: 640px;
+	height: 480px;
+}
