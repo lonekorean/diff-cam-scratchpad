@@ -1,0 +1,13 @@
+body {
+	font: 1em/1 sans-serif;
+}
+
+video, canvas {
+	width: 320px;
+	height: 240px;
+	border: 1px solid #000;
+}
+
+canvas {
+	image-rendering: pixelated;
+}
