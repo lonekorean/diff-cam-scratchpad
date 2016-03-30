@@ -1,0 +1,42 @@
+body {
+	margin: 20px;
+	font: 1em/1 sans-serif;
+	text-align: center;
+}
+
+.drop-zone {
+	display: inline-block;
+	width: 320px;
+	height: 240px;
+	margin: 10px;
+	border: 4px dashed #ccc;
+	border-radius: 10px;
+	background-color: #eee;
+	overflow: hidden;
+}
+
+img {
+	width: 320px;
+	height: 240px;
+	display: block;
+	object-fit: contain;
+}
+
+button {
+	font-size: 1.5em;
+	padding: 10px 20px;
+	border: none;
+	color: #fff;
+	background-color: #666;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+canvas {
+	display: none;
+	margin: 10px;
+	border: 4px solid #ccc;
+	background-color: #eee;
+	image-rendering: pixelated;
+}
