@@ -11,17 +11,18 @@
 	<body>
 		<section>
 			<div class="drop-zone">
-				<img id="img1">
+				<img id="img1" alt="first image">
 			</div>
 			<div class="drop-zone">
-				<img id="img2">
+				<img id="img2" alt="second image">
 			</div>
 		</section>
 		<section>
-			<button id="raw" type="button" disabled>Give me the raw diff!</button>
-			<button id="mono" type="button" disabled>I prefer mono!</button>
-			<br>
-			<canvas id="diff"></canvas>
+			<button id="raw" type="button" disabled>Show Raw Diff</button>
+			<button id="mono" type="button" disabled>Show Mono Diff</button>
+		</section>
+		<section>
+			<canvas id="canvas"></canvas>
 		</section>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

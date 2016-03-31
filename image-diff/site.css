@@ -1,42 +1,65 @@
 body {
-	margin: 20px;
+	margin: 10px;
 	font: 1em/1 sans-serif;
 	text-align: center;
 }
 
+section {
+	margin: 10px 0;
+}
+
 .drop-zone {
 	display: inline-block;
-	width: 320px;
-	height: 240px;
+	position: relative;
+	width: 480px;
+	height: 360px;
 	margin: 10px;
-	border: 4px dashed #ccc;
+	border: 4px dashed #666;
 	border-radius: 10px;
 	background-color: #eee;
-	overflow: hidden;
+}
+
+.drop-zone::before {
+	content: '+';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: #ccc;
+	text-align: center;
+	font-size: 8em;
+	transform: translate(-50%, -50%);
 }
 
 img {
-	width: 320px;
-	height: 240px;
-	display: block;
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
 	object-fit: contain;
 }
 
 button {
-	font-size: 1.5em;
-	padding: 10px 20px;
+	display: inline-block;
+	width: 260px;
+	margin: 0 5px;
+	padding: 10px;
 	border: none;
 	color: #fff;
-	background-color: #666;
+	background-color: #090;
+	font-size: 1.5em;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 }
 
+button[disabled] {
+	background-color: #ccc;
+}
+
 canvas {
 	display: none;
+	max-width: 960px;
 	margin: 10px;
-	border: 4px solid #ccc;
-	background-color: #eee;
 	image-rendering: pixelated;
 }
