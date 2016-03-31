@@ -7,7 +7,7 @@ navigator.mediaDevices.getUserMedia(constraints)
 	.catch(error);
 
 function success(stream) {
-	var video = document.getElementsByTagName('video')[0];
+	var video = document.getElementById('video');
 	video.srcObject = stream;
 }
 
