@@ -1,0 +1,38 @@
+body {
+	margin: 170px 20px 20px;
+	text-align: center;
+}
+
+.wrapper {
+	display: inline-block;
+	position: relative;
+	width: 640px;
+	height: 480px;
+	background-color: #000;
+}
+
+img {
+	position: absolute;
+	left: 10px;
+	top: -160px;
+}
+
+.kill {
+	transform: rotate(-450deg);
+	transition: transform 1s;
+}
+
+video {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 640px;
+	height: 480px;
+}
+
+.motion-box {
+	display: none;
+	position: absolute;
+	border: 4px solid #fff;
+	transition: all .1s;
+}
