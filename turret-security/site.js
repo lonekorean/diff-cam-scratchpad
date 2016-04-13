@@ -1,11 +1,10 @@
-var video = $('video')[0];
 var $motionBox = $('.motion-box');
 var $turret = $('img');
 
 var scale = 10;	// capture resolution over motion resolution
-var isTargetLost = true;
-var isKilled = false;
-
+var isActivated = false;
+var isTargetInSight = false;
+var isKnockedOver = false;
 var lostTimeout;
 
 function initSuccess() {
@@ -17,64 +16,74 @@ function initError() {
 }
 
 function startComplete() {
+	setTimeout(activate, 500);
+}
+
+function activate() {
+	isActivated = true;
 	play('activated');
 }
 
 function capture(payload) {
-	if (isKilled) {
+	if (!isActivated || isKnockedOver) {
 		return;
 	}
 
 	var box = payload.motionBox;
 	if (box) {
-		var left = box.x.min * scale + 1;
+		// video is flipped, so we're positioning from right instead of left
+		var right = box.x.min * scale + 1;
 		var top = box.y.min * scale + 1;
 		var width = (box.x.max - box.x.min) * scale;
 		var height = (box.y.max - box.y.min) * scale;
 
 		$motionBox.css({
 			display: 'block',
-			left: left,
+			right: right,
 			top: top,
 			width: width,
 			height: height
 		});
 
-		if (isTargetLost) {
+		if (!isTargetInSight) {
+			isTargetInSight = true;
 			play('i-see-you');
-			isTargetLost = false;
 		} else {
 			play('fire');
 		}
+
 		clearTimeout(lostTimeout);
 		lostTimeout = setTimeout(declareLost, 2000);
 	}
 
+	// video is flipped, so (0, 0) is at top right
 	if (payload.checkMotionPixel(0, 0)) {
-		killTurret();
+		knockOver();
 	}
+}
+
+function declareLost() {
+	isTargetInSight = false;
+	play('target-lost');
+}
+
+function knockOver() {
+	isKnockedOver = true;
+	clearTimeout(lostTimeout);
+
+	$turret.addClass('knocked-over');
+	$motionBox.hide();
+
+	play('ow');
 }
 
 function play(audioId) {
 	$('#audio-' + audioId)[0].play();
-	console.log(audioId);
-}
-
-function declareLost() {
-	play('target-lost');
-	isTargetLost = true;
-}
-
-function killTurret() {
-	isKilled = true;
-	clearTimeout(lostTimeout);
-	$motionBox.hide();
-	$turret.addClass('killed');
-	play('ow');
 }
 
 DiffCamEngine.init({
-	video: video,
+	video: document.getElementById('video'),
+	pixelDiffThreshold: 16,
 	includeMotionBox: true,
 	includeMotionPixels: true,
 	initSuccessCallback: initSuccess,

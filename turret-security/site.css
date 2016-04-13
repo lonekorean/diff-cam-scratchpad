@@ -13,12 +13,12 @@ body {
 
 img {
 	position: absolute;
-	left: 10px;
+	right: 10px;
 	top: -160px;
 }
 
-.killed {
-	transform: rotate(-450deg);
+.knocked-over {
+	transform: rotate(450deg);
 	transition: transform 1s;
 }
 
@@ -28,6 +28,7 @@ video {
 	top: 0;
 	width: 640px;
 	height: 480px;
+	transform: scaleX(-1); /* flip video, like a mirror */
 }
 
 .motion-box {
