@@ -17,7 +17,7 @@ img {
 	top: -160px;
 }
 
-.kill {
+.killed {
 	transform: rotate(-450deg);
 	transition: transform 1s;
 }
