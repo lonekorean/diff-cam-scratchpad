@@ -1,7 +1,19 @@
 # diff-cam-scratchpad
 
-Various quick demos and experiments showing the concepts behind Diff Cam.
+Various demos using `getUserMedia()` and diff-cam-engine (https://github.com/lonekorean/diff-cam-engine).
 
-### Notes
+### simple-cam
 
-If you're trying to run this locally, check out this guide: https://github.com/mrdoob/three.js/wiki/How-to-run-things-locally.
+Very basic demo showing how to access the webcam.
+
+### /image-diff
+
+Web app that accepts two images via drag-and-drop, then lets you diff them to see any pixels that are not the same.
+
+### /diff-cam-example
+
+Watches a live stream from the webcam, showing a real-time motion heatmap with a score indicating how much motion is present.
+
+### /turret-security
+
+A "security" demo that watches a live stream from the webcam, drawing a box around any motion it sees, with accompanying audio cues. Turret can be disabled by "hitting" it on screen.
