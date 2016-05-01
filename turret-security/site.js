@@ -83,7 +83,7 @@ function play(audioId) {
 
 DiffCamEngine.init({
 	video: document.getElementById('video'),
-	pixelDiffThreshold: 16,
+	captureIntervalTime: 50,
 	includeMotionBox: true,
 	includeMotionPixels: true,
 	initSuccessCallback: initSuccess,
