@@ -21,3 +21,7 @@ Watches a live stream from the webcam, showing a real-time motion heatmap with a
 ##### turret-security
 
 A "security" demo that watches a live stream from the webcam, drawing a box around any motion it sees, with accompanying audio cues. Turret can be disabled by "hitting" it on screen.
+
+### /spooky-bug
+
+Failed attempt at time-delayed motion sensing. Spooky results. This code is terrible, do not use as-is.
