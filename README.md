@@ -2,7 +2,7 @@
 
 Various demos using `getUserMedia()` and diff-cam-engine (https://github.com/lonekorean/diff-cam-engine).
 
-### simple-cam
+### /simple-cam
 
 Very basic demo showing how to access the webcam.
 
