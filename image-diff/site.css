@@ -8,6 +8,19 @@ section {
 	margin: 10px 0;
 }
 
+p {
+	font-size: 1.5em;
+}
+
+a {
+	color: #0aa;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 .drop-zone {
 	display: inline-block;
 	position: relative;
