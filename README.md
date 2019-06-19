@@ -1,6 +1,6 @@
 # diff-cam-scratchpad
 
-Various demos using `getUserMedia()` and diff-cam-engine (https://github.com/lonekorean/diff-cam-engine).
+Various demos using `getUserMedia()` and [diff-cam-engine](https://github.com/lonekorean/diff-cam-engine).
 
 ### Demos
 
