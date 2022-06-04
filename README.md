@@ -4,7 +4,7 @@ Various demos using `getUserMedia()` and [diff-cam-engine](https://github.com/lo
 
 ### Demos
 
-Each folder contains a different demo. Visit http://diffcam.com/ to see these demos in action.
+Each folder contains a different demo. Visit https://lonekorean.github.io/diff-cam-project/ to see these demos in action.
 
 ##### simple-cam
 
